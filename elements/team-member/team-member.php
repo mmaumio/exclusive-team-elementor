@@ -8,7 +8,7 @@ class Exad_Team_Member extends Widget_Base {
 		return 'exad-team-member';
 	}
 	public function get_title() {
-		return esc_html__( 'DC Team Member', 'exclusive-team-elementor' );
+		return esc_html__( 'DC Team Member', 'exclusive-addons-elementor' );
 	}
 	public function get_icon() {
 		return 'fa fa-user';
@@ -24,14 +24,14 @@ class Exad_Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'exad_team_content',
 			[
-				'label' => esc_html__( 'Content', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Content', 'exclusive-addons-elementor' ),
 			]
 		);
 		
 		$this->add_control(
 			'exad_team_member_image',
 			[
-				'label' => __( 'Member Avatar', 'exclusive-team-elementor' ),
+				'label' => __( 'Member Avatar', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -52,27 +52,27 @@ class Exad_Team_Member extends Widget_Base {
 		$this->add_control(
 			'exad_team_member_name',
 			[
-				'label' => esc_html__( 'Name', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Name', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__( 'John Doe', 'exclusive-team-elementor' ),
+				'default' => esc_html__( 'John Doe', 'exclusive-addons-elementor' ),
 			]
 		);
 		
 		$this->add_control(
 			'exad_team_member_designation',
 			[
-				'label' => esc_html__( 'Designation', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Designation', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__( 'My Designation', 'exclusive-team-elementor' ),
+				'default' => esc_html__( 'My Designation', 'exclusive-addons-elementor' ),
 			]
 		);
 		
 		$this->add_control(
 			'exad_team_member_description',
 			[
-				'label' => esc_html__( 'Description', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Description', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'Add team member details here', 'exclusive-team-elementor' ),
+				'default' => esc_html__( 'Add team member details here', 'exclusive-addons-elementor' ),
 			]
 		);
 		$this->end_controls_section();
@@ -83,13 +83,13 @@ class Exad_Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'exad_section_team_member_social_profiles',
 			[
-				'label' => esc_html__( 'Social Profiles', 'exclusive-team-elementor' )
+				'label' => esc_html__( 'Social Profiles', 'exclusive-addons-elementor' )
 			]
 		);
 		$this->add_control(
 			'exad_team_member_enable_social_profiles',
 			[
-				'label' => esc_html__( 'Display Social Profiles?', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Display Social Profiles?', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -120,7 +120,7 @@ class Exad_Team_Member extends Widget_Base {
 				'fields' => [
 					[
 						'name' => 'social',
-						'label' => esc_html__( 'Icon', 'exclusive-team-elementor' ),
+						'label' => esc_html__( 'Icon', 'exclusive-addons-elementor' ),
 						'type' => Controls_Manager::ICON,
 						'label_block' => true,
 						'default' => 'fa fa-wordpress',
@@ -129,17 +129,22 @@ class Exad_Team_Member extends Widget_Base {
 							'fa fa-behance',
 							'fa fa-bitbucket',
 							'fa fa-codepen',
+							'fa fa-delicious',
+							'fa fa-digg',
 							'fa fa-dribbble',
+							'fa fa-envelope',
 							'fa fa-facebook',
 							'fa fa-flickr',
 							'fa fa-foursquare',
 							'fa fa-github',
 							'fa fa-google-plus',
+							'fa fa-houzz',
 							'fa fa-instagram',
 							'fa fa-jsfiddle',
 							'fa fa-linkedin',
 							'fa fa-medium',
 							'fa fa-pinterest',
+							'fa fa-product-hunt',
 							'fa fa-reddit',
 							'fa fa-shopping-cart',
 							'fa fa-slideshare',
@@ -149,23 +154,27 @@ class Exad_Team_Member extends Widget_Base {
 							'fa fa-stack-overflow',
 							'fa fa-tripadvisor',
 							'fa fa-tumblr',
+							'fa fa-twitch',
 							'fa fa-twitter',
 							'fa fa-vimeo',
+							'fa fa-vk',
 							'fa fa-whatsapp',
 							'fa fa-wordpress',
+							'fa fa-xing',
+							'fa fa-yelp',
 							'fa fa-youtube',
 						],
 					],
 					[
 						'name' => 'link',
-						'label' => esc_html__( 'Link', 'exclusive-team-elementor' ),
+						'label' => esc_html__( 'Link', 'exclusive-addons-elementor' ),
 						'type' => Controls_Manager::URL,
 						'label_block' => true,
 						'default' => [
 							'url' => '',
 							'is_external' => 'true',
 						],
-						'placeholder' => esc_html__( 'Place URL here', 'exclusive-team-elementor' ),
+						'placeholder' => esc_html__( 'Place URL here', 'exclusive-addons-elementor' ),
 					],
 				],
 				'title_field' => '<i class="{{ social }}"></i> {{{ social.replace( \'fa fa-\', \'\' ).replace( \'-\', \' \' ).replace( /\b\w/g, function( letter ){ return letter.toUpperCase() } ) }}}',
@@ -180,23 +189,22 @@ class Exad_Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'exad_section_team_members_styles_general',
 			[
-				'label' => esc_html__( 'Member Styles', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Member Styles', 'exclusive-addons-elementor' ),
 				'tab' => Controls_Manager::TAB_STYLE
 			]
 		);
 		$this->add_control(
 			'exad_team_members_preset',
 			[
-				'label' => esc_html__( 'Style Preset', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Style Preset', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::SELECT,
-				'description' => __( 'Some of the below options will show up based on the Preset. ie. Social Section', 'exclusive-team-elementor' ),
 				'default' => '-basic',
 				'options' => [
-					'-basic' => esc_html__( 'Basic', 'exclusive-team-elementor' ),
-					'-circle' => esc_html__( 'Circle Gradient', 'exclusive-team-elementor' ),
-					'-social-left' => esc_html__( 'Social Left on Hover', 'exclusive-team-elementor' ),
-					'-rounded' => esc_html__( 'Rounded', 'exclusive-team-elementor' ),
-					'-content-hover' => esc_html__( 'Content on Hover', 'exclusive-team-elementor' ),
+					'-basic' => esc_html__( 'Basic', 'exclusive-addons-elementor' ),
+					'-circle' => esc_html__( 'Circle Gradient', 'exclusive-addons-elementor' ),
+					'-social-left' => esc_html__( 'Social Left on Hover', 'exclusive-addons-elementor' ),
+					'-rounded' => esc_html__( 'Rounded', 'exclusive-addons-elementor' ),
+					'-content-hover' => esc_html__( 'Content on Hover', 'exclusive-addons-elementor' ),
 				],
 			]
 		);
@@ -204,7 +212,7 @@ class Exad_Team_Member extends Widget_Base {
 		$this->add_control(
 			'exad_team_members_avatar_bg',
 			[
-				'label' => esc_html__( 'Avatar Background Color', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Avatar Background Color', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#826EFF',
 				'selectors' => [
@@ -225,7 +233,7 @@ class Exad_Team_Member extends Widget_Base {
 		$this->start_controls_section(
             'section_team_carousel_name',
             [
-                'label' => __('Name', 'exclusive-team-elementor'),
+                'label' => __('Name', 'exclusive-addons-elementor'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -233,7 +241,7 @@ class Exad_Team_Member extends Widget_Base {
         $this->add_control(
             'exad_title_color',
             [
-                'label' => __('Color', 'exclusive-team-elementor'),
+                'label' => __('Color', 'exclusive-addons-elementor'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000',
                 'selectors' => [
@@ -255,7 +263,7 @@ class Exad_Team_Member extends Widget_Base {
         $this->start_controls_section(
             'section_team_member_designation',
             [
-                'label' => __('Designation', 'exclusive-team-elementor'),
+                'label' => __('Designation', 'exclusive-addons-elementor'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -263,7 +271,7 @@ class Exad_Team_Member extends Widget_Base {
         $this->add_control(
             'exad_designation_color',
             [
-                'label' => __('Color', 'exclusive-team-elementor'),
+                'label' => __('Color', 'exclusive-addons-elementor'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#8a8d91',
                 'selectors' => [
@@ -285,7 +293,7 @@ class Exad_Team_Member extends Widget_Base {
         $this->start_controls_section(
             'section_team_carousel_description',
             [
-                'label' => __('Description', 'exclusive-team-elementor'),
+                'label' => __('Description', 'exclusive-addons-elementor'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -293,7 +301,7 @@ class Exad_Team_Member extends Widget_Base {
         $this->add_control(
             'exad_description_color',
             [
-                'label' => __('Color', 'exclusive-team-elementor'),
+                'label' => __('Color', 'exclusive-addons-elementor'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#8a8d91',
                 'selectors' => [
@@ -315,19 +323,19 @@ class Exad_Team_Member extends Widget_Base {
         $this->start_controls_section(
             'exad_team_member_social_section',
             [
-                'label' => __('Social', 'exclusive-team-elementor'),
+                'label' => __('Social', 'exclusive-addons-elementor'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
 		$this->start_controls_tabs( 'exad_team_members_social_icons_style_tabs' );
 
-		$this->start_controls_tab( 'exad_team_members_social_icon_tab', [ 'label' => esc_html__( 'Normal', 'exclusive-team-elementor' ) ] );
+		$this->start_controls_tab( 'exad_team_members_social_icon_tab', [ 'label' => esc_html__( 'Normal', 'exclusive-addons-elementor' ) ] );
 
 		$this->add_control(
 			'exad_team_member_social_color_1',
 			[
-				'label' => esc_html__( 'Background Color', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Background Color', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#FFF',
 				'selectors' => [
@@ -342,7 +350,7 @@ class Exad_Team_Member extends Widget_Base {
 		$this->add_control(
 			'exad_team_member_social_color_2',
 			[
-				'label' => esc_html__( 'Background Color', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Background Color', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#272c44',
 				'selectors' => [
@@ -356,12 +364,12 @@ class Exad_Team_Member extends Widget_Base {
 		
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'exad_team_members_social_icon_hover', [ 'label' => esc_html__( 'Hover', 'exclusive-team-elementor' ) ] );
+		$this->start_controls_tab( 'exad_team_members_social_icon_hover', [ 'label' => esc_html__( 'Hover', 'exclusive-addons-elementor' ) ] );
 
 		$this->add_control(
 			'exad_team_member_social_hover_color_1',
 			[
-				'label' => esc_html__( 'Hover Color', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Hover Color', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#ff6d55',
 				'selectors' => [
@@ -376,7 +384,7 @@ class Exad_Team_Member extends Widget_Base {
 		$this->add_control(
 			'exad_team_member_social_hover_color_2',
 			[
-				'label' => esc_html__( 'Hover Color', 'exclusive-team-elementor' ),
+				'label' => esc_html__( 'Hover Color', 'exclusive-addons-elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#ff6d55',
 				'selectors' => [
@@ -418,13 +426,13 @@ class Exad_Team_Member extends Widget_Base {
 						<path fill-rule="evenodd" opacity=".659" d="M61.922 0C95.654 0 123 27.29 123 60.953c0 33.664-27.346 60.953-61.078 60.953-33.733 0-61.078-27.289-61.078-60.953C.844 27.29 28.189 0 61.922 0z"/>
 					</svg>
 					<?php endif; ?>
-					<img src="<?php echo esc_url($team_member_image_url); ?>" class="circled" alt="<?php echo esc_attr( $settings['exad_team_member_name'] ); ?>">
+					<img src="<?php echo esc_url($team_member_image_url); ?>" class="circled" alt="<?php echo $settings['exad_team_member_name']; ?>">
 				</div>
 				<div class="exad-team-member-content">
-					<h2 class="exad-team-member-name"><?php echo esc_html( $settings['exad_team_member_name'] ); ?></h2>
-					<span class="exad-team-member-designation"><?php echo esc_html( $settings['exad_team_member_designation'] ); ?></span>
+					<h2 class="exad-team-member-name"><?php echo $settings['exad_team_member_name']; ?></h2>
+					<span class="exad-team-member-designation"><?php echo $settings['exad_team_member_designation']; ?></span>
 					<p class="exad-team-member-about">
-						<?php echo esc_html( $settings['exad_team_member_description'] ); ?>
+						<?php echo $settings['exad_team_member_description']; ?>
 					</p>
 					<?php if ( $settings['exad_team_member_enable_social_profiles'] == 'yes' ): ?>
 						<ul class="list-inline exad-team-member-social">
@@ -432,7 +440,7 @@ class Exad_Team_Member extends Widget_Base {
 							
 							<?php $target = $item['link']['is_external'] ? ' target="_blank"' : ''; ?>
 							<li>
-								<a href="<?php echo esc_url( $item['link']['url'] ); ?>"<?php echo $target; ?>><i class="<?php echo esc_attr( $item['social'] ); ?>"></i></a>
+								<a href="<?php echo esc_attr( $item['link']['url'] ); ?>"<?php echo $target; ?>><i class="<?php echo esc_attr($item['social'] ); ?>"></i></a>
 							</li>
 							
 							<?php endforeach; ?>

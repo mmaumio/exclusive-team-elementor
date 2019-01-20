@@ -3,7 +3,7 @@
  * Plugin Name: Exclusive Team for Elementor
  * Plugin URI: http://devscred.com/exclusive-team/
  * Description: The Only Team Member Element you'll ever need
- * Version: 1.0.0
+ * Version: 1.1
  * Author: DevsCred
  * Author URI: http://devscred.com
  * Text Domain: exclusive-team-elementor
