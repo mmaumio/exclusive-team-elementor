@@ -2,9 +2,9 @@
 Contributors: mmaumio, devscred
 Tags: elementor, elements, team, addons, elementor addon, elementor widget, page builder, builder, visual editor, wordpress page builder, team element, team-carousel, exclusive team, trendy
 Requires at least: 4.0
-Tested up to: 5.0.2
+Tested up to: 5.8.3
 Requires PHP: 5.4
-Stable tag: 1.0
+Stable tag: 1.2
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -64,6 +64,8 @@ Not at the moment.
 
 == Changelog ==
 
+= 1.2 - 18/01/2022
+- Tweak: Overall bug fixes and improvements.
 
 = 1.0 =
 Initial release

@@ -15,11 +15,11 @@ class Exad_Team_Carousel extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'fa fa-users';
+		return 'eicon-user-circle-o';
 	}
 
 	public function get_categories() {
-		return [ 'exclusive-addons-elementor' ];
+		return [ 'exclusive-team' ];
 	}
 
 	public function get_script_depends() {

@@ -1,11 +1,14 @@
 <?php
-/**
+
+ /**
  * Plugin Name: Exclusive Team for Elementor
  * Plugin URI: http://devscred.com/exclusive-team/
  * Description: The Only Team Member Element you'll ever need
- * Version: 1.1
- * Author: DevsCred
- * Author URI: http://devscred.com
+ * Version: 1.2
+ * Author: DevsCred.com
+ * Author URI: https://devscred.com/
+ * Elementor tested up to: 3.5.2
+ * Elementor Pro tested up to: 3.5.2
  * Text Domain: exclusive-team-elementor
  * Domain Path: /languages
  * License: GPL3
@@ -95,20 +98,20 @@ if ( ! class_exists( 'Exclusive_Team_Elementor' ) ) {
         public function define_constants() {
 
             // Some Constants for ease of use
-            if ( ! defined( 'EXAD_VER' ) )
-    			define( 'EXAD_VER', '1.0.0' );
-    		if ( ! defined( 'EXAD_PNAME' ) )
-    			define( 'EXAD_PNAME', basename( dirname( __FILE__ ) ) );
-    		if ( ! defined( 'EXAD_PBNAME' ) )
-    		define( 'EXAD_PBNAME', plugin_basename(__FILE__) );
-    		if ( ! defined( 'EXAD_PATH' ) )
-    			define( 'EXAD_PATH', plugin_dir_path( __FILE__ ) );
-            if ( ! defined( 'EXAD_ELEMENTS' ) )
-                define( 'EXAD_ELEMENTS', plugin_dir_path( __FILE__ ) . 'elements/' );
-    		if ( ! defined( 'EXAD_URL' ) )
-    		define( 'EXAD_URL', plugins_url( '/', __FILE__ ) );
-    		if ( ! defined( 'EXAD_ASSETS_URL' ) )
-    			define( 'EXAD_ASSETS_URL', EXAD_URL . 'assets/' );
+            if ( ! defined( 'EXAD_TEAM_VER' ) )
+    			define( 'EXAD_TEAM_VER', '1.2' );
+    		if ( ! defined( 'EXAD_TEAM_PNAME' ) )
+    			define( 'EXAD_TEAM_PNAME', basename( dirname( __FILE__ ) ) );
+    		if ( ! defined( 'EXAD_TEAM_PNAME' ) )
+    		define( 'EXAD_TEAM_PNAME', plugin_basename(__FILE__) );
+    		if ( ! defined( 'EXAD_TEAM_PATH' ) )
+    			define( 'EXAD_TEAM_PATH', plugin_dir_path( __FILE__ ) );
+            if ( ! defined( 'EXAD_TEAM_ELEMENTS' ) )
+                define( 'EXAD_TEAM_ELEMENTS', plugin_dir_path( __FILE__ ) . 'elements/' );
+    		if ( ! defined( 'EXAD_TEAM_URL' ) )
+    		define( 'EXAD_TEAM_URL', plugins_url( '/', __FILE__ ) );
+    		if ( ! defined( 'EXAD_TEAM_ASSETS_URL' ) )
+    			define( 'EXAD_TEAM_ASSETS_URL', EXAD_TEAM_URL . 'assets/' );
         }
 
         /**
@@ -120,7 +123,7 @@ if ( ! class_exists( 'Exclusive_Team_Elementor' ) ) {
             // Enqueue Styles and Scripts
             add_action( 'wp_enqueue_scripts', array( $this, 'exad_enqueue_scripts' ) );
             // Registering Elementor Widget Category
-            add_action( 'elementor/elements/categories_registered', array( $this, 'exad_register_category' ) );
+            add_action( 'elementor/elements/categories_registered', array( $this, 'exad_team_register_category' ) );
         	// Registering custom widgets
             add_action( 'elementor/widgets/widgets_registered', array( $this, 'exad_add_elements' ) );
             // Plugin Loaded Action
@@ -161,21 +164,21 @@ if ( ! class_exists( 'Exclusive_Team_Elementor' ) ) {
         *
         */
         public function exad_enqueue_scripts() {
-            wp_enqueue_style( 'exad-main-style', EXAD_URL . 'assets/css/exad-style.css' );
+            wp_enqueue_style( 'exad-main-style', EXAD_TEAM_URL . 'assets/css/exad-style.min.css' );
 
-            wp_enqueue_script( 'exad-main-script', EXAD_URL . 'assets/js/exad-script.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'exad-main-script', EXAD_TEAM_URL . 'assets/js/exad-script.min.js', array( 'jquery' ), EXAD_TEAM_VER, true );
         }
 
         /**
         * Register Exclusive Elementor Addons category
         *
         */
-        public function exad_register_category( $elements_manager ) {
+        public function exad_team_register_category( $elements_manager ) {
 
             $elements_manager->add_category(
-                'exclusive-addons-elementor',
+                'exclusive-team',
                 [
-                    'title' => __( 'Exclusive Addons', 'exclusive-team-elementor' ),
+                    'title' => __( 'Exclusive Team', 'exclusive-team-elementor' ),
                     'icon' => 'fa fa-plug',
                 ]
             );
@@ -214,8 +217,8 @@ if ( ! class_exists( 'Exclusive_Team_Elementor' ) ) {
         */
         public function exad_add_elements() {
 
-        	require_once EXAD_ELEMENTS . 'team-member/team-member.php';
-            require_once EXAD_ELEMENTS . 'team-carousel/team-carousel.php';
+        	require_once EXAD_TEAM_ELEMENTS . 'team-member/team-member.php';
+            require_once EXAD_TEAM_ELEMENTS . 'team-carousel/team-carousel.php';
             
         }
 
