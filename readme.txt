@@ -64,8 +64,23 @@ Not at the moment.
 
 == Changelog ==
 
-= 1.2.4 - 18/01/2022
+= 1.2.4 - 19/01/2022
 - Tweak: Overall bug fixes and improvements.
+
+= 1.2.3 =
+Fixed an issue with the compatibility with our Core Plugin Exclusive Addons Elementor
+
+= 1.2.2 =
+Added Usage Tracking capability on plugin.
+
+= 1.2.1 =
+Changed some instructions on the readme file
+
+= 1.2 =
+Fixed several bugs about responsiveness and Carousel settings.
+
+= 1.1 =
+Added space to let the Carousel items sit on the grid properly.
 
 = 1.0 =
 Initial release
