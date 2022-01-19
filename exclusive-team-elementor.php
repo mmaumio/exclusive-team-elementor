@@ -166,7 +166,14 @@ if ( ! class_exists( 'Exclusive_Team_Elementor' ) ) {
         *
         */
         public function exad_enqueue_scripts() {
+
+            // CSS Load for slick slider
+            wp_enqueue_style( 'exad-slick', EXAD_TEAM_URL . 'assets/vendor/css/slick.min.css' );
+            wp_enqueue_style( 'exad-slick-theme', EXAD_TEAM_URL . 'assets/vendor/css/slick-theme.min.css' );
+
             wp_enqueue_style( 'exad-main-style', EXAD_TEAM_URL . 'assets/css/exad-style.min.css' );
+
+            wp_enqueue_script( 'jquery-slick', EXAD_TEAM_URL . 'assets/vendor/js/slick.min.js', array( 'jquery' ), EXAD_TEAM_VER, true );
 
             wp_enqueue_script( 'exad-main-script', EXAD_TEAM_URL . 'assets/js/exad-script.min.js', array( 'jquery' ), EXAD_TEAM_VER, true );
         }

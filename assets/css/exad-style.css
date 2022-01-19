@@ -45,6 +45,7 @@
 
 .exad-team-member-basic .exad-team-member-social {
   margin-bottom: 0;
+  padding: 0;
 }
 .exad-team-member-basic .exad-team-member-social li, .exad-team-member-rounded .exad-team-member-social li, .exad-team-member-content-hover .exad-team-member-social li {
   display: inline-block;
