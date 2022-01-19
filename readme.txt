@@ -4,7 +4,7 @@ Tags: elementor, elements, team, addons, elementor addon, elementor widget, page
 Requires at least: 4.0
 Tested up to: 5.8.3
 Requires PHP: 5.4
-Stable tag: 1.2
+Stable tag: 1.3.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -64,7 +64,7 @@ Not at the moment.
 
 == Changelog ==
 
-= 1.2 - 18/01/2022
+= 1.3.0 - 19/01/2022
 - Tweak: Overall bug fixes and improvements.
 
 = 1.0 =

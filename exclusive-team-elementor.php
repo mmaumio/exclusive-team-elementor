@@ -4,7 +4,7 @@
  * Plugin Name: Exclusive Team for Elementor
  * Plugin URI: http://devscred.com/exclusive-team/
  * Description: The Only Team Member Element you'll ever need
- * Version: 1.2
+ * Version: 1.3.0
  * Author: DevsCred.com
  * Author URI: https://devscred.com/
  * Elementor tested up to: 3.5.2
@@ -99,7 +99,7 @@ if ( ! class_exists( 'Exclusive_Team_Elementor' ) ) {
 
             // Some Constants for ease of use
             if ( ! defined( 'EXAD_TEAM_VER' ) )
-    			define( 'EXAD_TEAM_VER', '1.2' );
+    			define( 'EXAD_TEAM_VER', '1.3.0' );
     		if ( ! defined( 'EXAD_TEAM_PNAME' ) )
     			define( 'EXAD_TEAM_PNAME', basename( dirname( __FILE__ ) ) );
     		if ( ! defined( 'EXAD_TEAM_PNAME' ) )
@@ -126,6 +126,8 @@ if ( ! class_exists( 'Exclusive_Team_Elementor' ) ) {
             add_action( 'elementor/elements/categories_registered', array( $this, 'exad_team_register_category' ) );
         	// Registering custom widgets
             add_action( 'elementor/widgets/widgets_registered', array( $this, 'exad_add_elements' ) );
+            // Initiate Appsero
+            $this->exclusive_team_appsero_init();
             // Plugin Loaded Action
             add_action( 'plugins_loaded', array( $this, 'exad_element_pack_load_plugin' ) );
             // Add Body Class 
@@ -220,6 +222,27 @@ if ( ! class_exists( 'Exclusive_Team_Elementor' ) ) {
         	require_once EXAD_TEAM_ELEMENTS . 'team-member/team-member.php';
             require_once EXAD_TEAM_ELEMENTS . 'team-carousel/team-carousel.php';
             
+        }
+
+        /**
+         * Initialize the tracker
+         *
+         * @return void
+         */
+        protected function exclusive_team_appsero_init() {
+
+            if ( ! class_exists( '\Appsero\Client' ) ) {
+                require_once __DIR__ . '/vendor/appsero/src/Client.php';
+            }
+
+            $client = new \Appsero\Client( '966d5315-a3a2-4622-93a3-7836d5eb251a', 'Exclusive Team Elementor', __FILE__ );
+
+            // Active insights
+            $client->insights()->init();
+
+            // Active automatic updater
+            $client->updater();
+
         }
 
         /**
