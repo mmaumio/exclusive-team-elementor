@@ -4,7 +4,7 @@
  * Plugin Name: Exclusive Team for Elementor
  * Plugin URI: http://devscred.com/exclusive-team/
  * Description: The Only Team Member Element you'll ever need
- * Version: 1.3.0
+ * Version: 1.2.4
  * Author: DevsCred.com
  * Author URI: https://devscred.com/
  * Elementor tested up to: 3.5.2
@@ -99,7 +99,7 @@ if ( ! class_exists( 'Exclusive_Team_Elementor' ) ) {
 
             // Some Constants for ease of use
             if ( ! defined( 'EXAD_TEAM_VER' ) )
-    			define( 'EXAD_TEAM_VER', '1.3.0' );
+    			define( 'EXAD_TEAM_VER', '1.2.4' );
     		if ( ! defined( 'EXAD_TEAM_PNAME' ) )
     			define( 'EXAD_TEAM_PNAME', basename( dirname( __FILE__ ) ) );
     		if ( ! defined( 'EXAD_TEAM_PNAME' ) )
