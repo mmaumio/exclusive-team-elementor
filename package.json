@@ -1,18 +1,18 @@
 {
-  "name": "exclusive-addons-elementor",
-  "version": "2.1.3",
-  "description": "Exclusive Addons Elementor by Devscred",
+  "name": "exclusive-team-elementor",
+  "version": "1.2.4",
+  "description": "Exclusive Team Elementor by Devscred",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:mmaumio/exclusive-addons-elementor.git"
+    "url": "git@github.com:mmaumio/exclusive-team-elementor.git"
   },
   "keywords": [
     "exclusive",
-    "addons",
+    "team",
     "elementor",
     "wordpress"
   ],
